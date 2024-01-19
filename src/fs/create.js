@@ -12,12 +12,13 @@ const create = async () => {
   const exists = fs.existsSync(fullPath);
   if (exists) {
     throw Error("FS operation failed");
-  } else {
-    fs.writeFile(fullPath, fileContent, "utf8", (err) => {
-      if (err) throw err;
-      console.log("File created");
-    });
   }
+
+  fs.writeFile(fullPath, fileContent, "utf8", (err) => {
+    if (err) throw err;
+    console.log("File created");
+  });
+  
 };
 
 await create();
