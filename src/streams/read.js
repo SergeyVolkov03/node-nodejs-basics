@@ -4,7 +4,7 @@ import fs from "fs";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const filePath = path.join(__dirname, "/files", "fileToRea.txt");
+const filePath = path.join(__dirname, "/files", "fileToRead.txt");
 
 const read = async () => {
   const stream = fs.createReadStream(filePath, "utf8");
@@ -14,7 +14,3 @@ const read = async () => {
 };
 
 await read();
-
-setTimeout(() => {
-  console.log("hello");
-}, 1000);
