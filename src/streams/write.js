@@ -8,7 +8,9 @@ const filePath = path.join(__dirname, "/files", "fileToWrite.txt");
 
 const write = async () => {
   const stream = fs.createWriteStream(filePath, "utf8");
+
   process.stdin.pipe(stream);
+  stream.on("error", (err) => console.log(`Err: ${err}`));
 };
 
 await write();
