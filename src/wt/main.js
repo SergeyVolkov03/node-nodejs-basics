@@ -5,7 +5,7 @@ import { cpus } from "os";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const filePath = path.join(__dirname, "worker");
+const filePath = path.join(__dirname, "/worker.js");
 const cpuCount = cpus().length;
 
 const performCalculations = async () => {
